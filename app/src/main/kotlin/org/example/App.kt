@@ -5,7 +5,19 @@ package org.example
 
 import kotlin.system.exitProcess
 
+fun calcularRaices(a: Int, b: Int,c: Int) {
+        for (x in -5..5) {
+        var funcion = a*x*x + b*x + c
+        println("El resultado cuando x es igual a $x: $funcion")
+    }
+}
+
+
+
+
+
 fun main() {
+    // Paso 1 crear funcion cuadratica
    val a=2
    val b=3
    val c=1 
@@ -14,11 +26,11 @@ fun main() {
         println ("a debe ser mayor a 0")
         exitProcess(0)
     }
-
     println("La función es $a x²+$b x+$c")
 
-    for (x in -5..5) {
-        val funcion = a*x*x + b*x + c
-        println("El resultado cuando x es igual a $x: $funcion")
-    }
+    // Paso 2 calcular funcion cuadratica
+    calcularRaices(2,3,1)
+
+    //Paso 3 calcular raices
+
 }
