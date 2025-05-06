@@ -16,4 +16,9 @@ fun main() {
     }
 
     println("La función es $a x²+$b x+$c")
+
+    for (x in -5..5) {
+        val funcion = a*x*x + b*x + c
+        println("El resultado cuando x es igual a $x: $funcion")
+    }
 }
