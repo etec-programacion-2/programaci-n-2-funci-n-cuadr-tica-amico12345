@@ -7,13 +7,23 @@ import kotlin.system.exitProcess
 
 fun calcularRaices(a: Int, b: Int,c: Int) {
         for (x in -5..5) {
-        var funcion = a*x*x + b*x + c
+        val funcion = a*x*x + b*x + c
         println("El resultado cuando x es igual a $x: $funcion")
     }
 }
 
+fun discriminante(a: Int, b: Int,c: Int){
+    val disc= b*b-4*a*c
+    println("El valor de la discriminante es $disc")
+}
 
-
+fun raices(disc: Int,b: Int,a: Int){
+    val raizDisc=Math.sqrt(disc)
+    val r1=(-b+raizDisc)/(2*a)
+    println("La primera raíz es: $r1")
+    val r2=(-b-raizDisc)/(2*a)
+    println("La segunda raíz es: $r2")
+}
 
 
 fun main() {
@@ -32,5 +42,8 @@ fun main() {
     calcularRaices(2,3,1)
 
     //Paso 3 calcular raices
+    discriminante(2,3,1)
+    raices(1,3,2)
+
 
 }
