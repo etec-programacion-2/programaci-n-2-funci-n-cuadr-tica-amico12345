@@ -12,24 +12,25 @@ fun calcularRaices(a: Int, b: Int,c: Int) {
     }
 }
 
-fun discriminante(a: Int, b: Int,c: Int){
+fun discriminante(a: Int, b: Int,c: Int): Int{
     val disc= b*b-4*a*c
     println("El valor de la discriminante es $disc")
+    return disc
 }
 
 fun raices(disc: Int,b: Int,a: Int){
-    val raizDisc=Math.sqrt(disc)
-    val r1=(-b+raizDisc)/(2*a)
-    println("La primera raíz es: $r1")
-    val r2=(-b-raizDisc)/(2*a)
-    println("La segunda raíz es: $r2")
+    val raizDisc=Math.sqrt(disc.toDouble())
+    val r1 : Double =(-b+raizDisc)/(2*a)
+    println("La primera raíz es: ${"%.2f".format(r1)}")
+    val r2 : Double =(-b-raizDisc)/(2*a)
+    println("La segunda raíz es: ${"%.2f".format(r2)}")
 }
 
 
 fun main() {
     // Paso 1 crear funcion cuadratica
-   val a=2
-   val b=3
+   val a=4
+   val b=6
    val c=1 
 
    if(a<=0) {
@@ -39,11 +40,11 @@ fun main() {
     println("La función es $a x²+$b x+$c")
 
     // Paso 2 calcular funcion cuadratica
-    calcularRaices(2,3,1)
+    calcularRaices(a,b,c)
 
     //Paso 3 calcular raices
-    discriminante(2,3,1)
-    raices(1,3,2)
+    var valorDisc=discriminante(a,b,c)
+    raices(valorDisc,b,a)
 
 
 }
